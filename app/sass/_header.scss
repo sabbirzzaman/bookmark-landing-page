@@ -1,0 +1,161 @@
+.header {
+  .container {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  &.overlay {
+    @include brakepoints-down(medium) {
+      &::before {
+        content: "";
+        height: 100vh;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background: $overlay;
+        transition: all 100ms ease-in-out;
+      }
+    }
+  }
+
+  &.open {
+    .header__toggle {
+      > span:first-child {
+        transform: rotate(45deg);
+        margin-bottom: 0;
+        transform-origin: 8px 4px;
+        background: $white;
+      }
+
+      > span:nth-child(2) {
+        opacity: 0;
+        margin-bottom: 0;
+        transform-origin: 20px 10px;
+        background: $white;
+      }
+
+      > span:last-child {
+        transform: rotate(-45deg);
+        margin-bottom: 0;
+        transform-origin: 7px 0px;
+        background: $white;
+      }
+    }
+
+    .is_active {
+      visibility: visible;
+      display: block;
+    }
+  }
+
+  .is_active {
+    visibility: hidden;
+    display: none;
+  }
+
+  &__toggle {
+    span {
+      display: block;
+      height: 4px;
+      width: 25px;
+      background: $veryDarkBlue;
+      transition: all 0.3s ease-in-out;
+      position: relative;
+      z-index: 10;
+
+      &:not(:last-child) {
+        margin-bottom: 4px;
+      }
+    }
+  }
+
+  &__logo {
+    position: relative;
+    z-index: 10;
+  }
+
+  &__navigation {
+    gap: 20px;
+  }
+
+  &__menu {
+    a {
+      font-size: $headerText;
+      text-transform: uppercase;
+      &:not(:last-child) {
+        margin-right: 20px;
+      }
+    }
+  }
+
+  &__button {
+    .button {
+      background: $softRed;
+      text-transform: uppercase;
+      &:hover {
+        background: $white;
+
+      }
+    }
+  }
+
+  &__tgl_navigation {
+    position: absolute;
+    text-align: center;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin-top: 120px;
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+
+  &__tgl_menu {
+    a {
+      display: block;
+      padding: 20px 0px;
+      color: $white;
+      text-transform: uppercase;
+      border-bottom: 2px solid $border;
+
+      &:first-child {
+        border-top: 2px solid $border;
+      }
+    }
+  }
+
+  &__tgl_button {
+    margin-top: 25px;
+
+    .toggle_button {
+      font-size: $headerText;
+      display: block;
+      font-family: "Rubik", sans-serif;
+      font-size: $text;
+      text-transform: uppercase;
+      background: transparent;
+      padding: 10px 25px;
+      color: $white;
+      border: 2px solid $white;
+      border-radius: 8px;
+      transition: all 200ms ease-in-out;
+
+      &:hover {
+        background: $softRed;
+      border: 2px solid $softRed;
+
+      }
+    }
+  }
+
+  &__tgl_social {
+    display: flex;
+    height: 35vh;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 20px;
+  }
+}

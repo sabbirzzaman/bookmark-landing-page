@@ -1,0 +1,58 @@
+.footer {
+  background: $veryDarkBlue;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  text-align: center;
+
+  &__grid {
+    @include brakepoints-up(large) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+    }
+  }
+
+  &__content {
+    @include brakepoints-up(large) {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+  }
+
+  &__logo {
+    margin-bottom: 20px;
+    @include brakepoints-up(large) {
+      margin: 0;
+      a {
+          display: flex;
+      }
+    }
+  }
+
+  &__links {
+    @include brakepoints-up(large) {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    a {
+      display: block;
+      color: $white;
+      margin-bottom: 20px;
+      @include brakepoints-up(large) {
+        margin: 0;
+      }
+    }
+  }
+
+  &__social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    @include brakepoints-up(large) {
+        justify-content: flex-end;
+    }
+  }
+}

@@ -1,0 +1,45 @@
+.newsletter {
+  text-align: center;
+  background: $softBlue;
+  &__title {
+    @include brakepoints-up(large) {
+        max-width: 460px;
+        margin: 0 auto;
+      }
+    h6 {
+      color: $white;
+    }
+    h2 {
+      color: $white;
+    }
+  }
+
+  &__form {
+    @include brakepoints-up(large) {
+        max-width: 460px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 69% 29%;
+        gap: 2%;
+      }
+  }
+
+  &__mail {
+    input {
+      padding: 12px 20px;
+      width: -webkit-fill-available;
+      margin-bottom: 20px;
+      border: none;
+      border-radius: 8px;
+    }
+  }
+
+  &__button {
+    input {
+      background: #fa5757;
+      border: navajowhite;
+      width: -webkit-fill-available;
+      cursor: pointer;
+    }
+  }
+}
